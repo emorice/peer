@@ -11,7 +11,8 @@ if(BUILD_PYTHON_PACKAGE)
 	find_package(SWIG REQUIRED)
 	include(${SWIG_USE_FILE})
 
-	# Find the scikit-build commands
+	# Python, NumPy, skbuild helpers
+	find_package(Python COMPONENTS Development NumPy REQUIRED)
 	find_package(PythonExtensions REQUIRED)
 
 	set(CMAKE_SWIG_FLAGS "")
@@ -20,6 +21,8 @@ if(BUILD_PYTHON_PACKAGE)
 	include_directories(./../External/Eigen)
 	include_directories(${PEER_SRC_DIR}/External/alglib)
 	include_directories(${PEER_SRC_DIR}/include)
+
+	include_directories(${Python_NumPy_INCLUDE_DIRS})
 
 	set_source_files_properties(peer.i PROPERTIES CPLUSPLUS ON)
 	set_source_files_properties(peer.i PROPERTIES SWIG_FLAGS "-includeall")
