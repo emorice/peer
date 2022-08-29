@@ -37,12 +37,12 @@ if(BUILD_PYTHON_PACKAGE)
 	python_extension_module(_peer)
 
 	# Install the module
-	install(TARGETS _peer LIBRARY DESTINATION pmbio_peer)
+	install(TARGETS _peer LIBRARY DESTINATION python/pmbio_peer)
 
 	# Get the wrapper files
 	get_property(support_files_directory TARGET _peer PROPERTY SWIG_SUPPORT_FILES)
 	# Install them along the library
-	install(DIRECTORY ${support_files_directory} DESTINATION pmbio_peer)
+	install(DIRECTORY ${support_files_directory} DESTINATION python/pmbio_peer)
 
 
 endif(BUILD_PYTHON_PACKAGE)

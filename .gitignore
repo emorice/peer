@@ -9,5 +9,5 @@ cran/peer/src/*.so
 cran/peer/src/*.h
 cran/peer_source.tgz
 cran/peer/src/alglib
-python/_skbuild
-python/*.egg-info
+_skbuild
+*.egg-info
