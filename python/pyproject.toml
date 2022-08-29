@@ -1,0 +1,17 @@
+[project]
+name = "pmbio-peer"
+version = "1.3.0"
+dependencies = [
+  "numpy"
+]
+
+[build-system]
+requires = [
+  "setuptools>=42",
+  "scikit-build",
+  "cmake",
+  "numpy",
+  "ninja; platform_system!='Windows'",
+  "swig"
+]
+build-backend = "setuptools.build_meta"

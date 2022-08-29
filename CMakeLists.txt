@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.14)
 project(PEER)
 
 #build options
@@ -20,29 +20,6 @@ endif (BUILD_UNIVERSAL)
 
 ## Documentation for final package
 # manual installation paths
-
-##PYTHON build options##
-# Path to python executable. If specified peer is built against this
-# python version, otherwise "which python" is used for auto-detection
-#SET(PYTHON_EXECUTABLE "")
-#Python include directory 
-#normally there is no need to specify them;instead these are
-#auto-determined from the location of the binary.
-#SET(PYTHON_INCLUDE_DIRS "")
-#Python install directory
-#If specified, the peer module will be installed here. Otherwise the
-#default site-packages location of the respective python installation
-#is used. 
-#SET(PYTHON_INSTDIR "")
-#Numpy header fiels.
-#Usually there is no need to specify them as they are automatically
-#determined from the python binary.
-#Note: it is vital that peer is built against the exact same python
-#installation that you are aiming to use.
-#SET(NUMPY_INCLUDE_DIR "")
-#
-##/PYTHON END##
-
 
 ##R build options###
 #set(R_EXECUTABLE "")
@@ -70,12 +47,6 @@ endif (BUILD_UNIVERSAL)
 #There are lots of scripts with cmake
 #for finding external libraries. 
 #see /usr/local/share/cmake-2.6/Modules/Find*.cmake for more examples
-
-find_package(SWIG REQUIRED)
-include(${SWIG_USE_FILE})
-
-include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-set(CMAKE_SWIG_FLAGS "")
 
 set(CMAKE_MODULE_PATH "${PEER_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 include_directories(./include)

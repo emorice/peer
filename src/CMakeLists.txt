@@ -19,10 +19,6 @@ endif(DEBUG_PEER)
 add_library(peerlib STATIC bayesnet.cpp array_helper.cpp sim.cpp
 vbfa.cpp sparsefa.cpp)
 
-INSTALL(TARGETS peerlib
-   ARCHIVE DESTINATION lib
-   LIBRARY DESTINATION lib)
-
 if (BUILD_PEERTOOL)
   include_directories(../External/yaml-cpp/include)
   add_executable(peertool sim.cpp peerutil_main.cpp peerutil.cpp)
