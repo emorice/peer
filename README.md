@@ -9,6 +9,12 @@ pip install 'git+https://github.com/emorice/peer.git'
 This installs the required build dependencies in a build environment, including cmake and swig,
 builds the package from source, and installs the resulting wheel  in the current python environment.
  
+Note that support for pyproject.toml and build dependencies was introduced in
+setuptools 61, but some systems have an older version installed and improper
+isolation that may leak the older setuptools system version in the build environment. If this affects
+you, try running the build from inside a virtual environment (without
+`--system-site-packages` !)
+
 Original description follows, with outdated instructions removed:
  
 ---
