@@ -12,6 +12,6 @@ requires = [
   "cmake",
   "numpy",
   "ninja; platform_system!='Windows'",
-  "swig"
+  "swig>=4.3.0"
 ]
 build-backend = "setuptools.build_meta"
